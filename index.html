@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhD Sourcer â Find CS PhD Graduates</title>
+<meta name="description" content="Search former PhD students from top CS programs in HPC, Systems, Architecture and more.">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #242836;
+    --border: #2e3345;
+    --text: #e4e6ef;
+    --text-dim: #8b8fa3;
+    --accent: #6c8cff;
+    --accent-dim: #4a6ad4;
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --orange: #fb923c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .header {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-left h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+
+  .header-left p {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-right a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    transition: all 0.15s;
+  }
+  .header-right a:hover {
+    color: var(--text);
+    border-color: var(--accent-dim);
+  }
+
+  .loading-bar {
+    height: 3px;
+    background: var(--border);
+    overflow: hidden;
+  }
+  .loading-bar.active {
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 50%, var(--accent) 100%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+  }
+  @keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .toolbar {
+    padding: 12px 32px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .toolbar-label {
+    color: var(--text-dim);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  .upload-btn {
+    padding: 6px 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-dim);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .upload-btn:hover { color: var(--text); border-color: var(--accent-dim); }
+
+  .upload-btn input[type="file"] { display: none; }
+
+  .controls {
+    display: flex;
+    gap: 12px;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .search-box {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search-box:focus { border-color: var(--accent); }
+  .search-box::placeholder { color: var(--text-dim); }
+
+  select {
+    padding: 10px 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    min-width: 150px;
+  }
+  select:focus { border-color: var(--accent); }
+  select option { background: var(--surface2); color: var(--text); }
+
+  .stats {
+    padding: 12px 32px;
+    background: var(--bg);
+    color: var(--text-dim);
+    font-size: 13px;
+    display: flex;
+    gap: 24px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .stat-value {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    padding: 0 16px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  thead th:hover { color: var(--text); }
+  thead th .sort-arrow { margin-left: 4px; font-size: 10px; }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+  tbody tr:hover { background: var(--surface2); }
+
+  td {
+    padding: 10px 16px;
+    vertical-align: top;
+    max-width: 250px;
+  }
+
+  .name-cell {
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 1px 2px;
+  }
+
+  .tag-area { background: rgba(108, 140, 255, 0.15); color: var(--accent); }
+  .tag-confidence-high { background: rgba(74, 222, 128, 0.15); color: var(--green); }
+  .tag-confidence-medium { background: rgb#SÂÂ3bÂãR²6öÆ÷#¢f"Ò×VÆÆ÷r²Ð¢çFrÖ6öæfFVæ6RÖÆ÷r²&6¶w&÷VæC¢&v&#CÂ2Â2ÂãR²6öÆ÷#¢f"Ò×&VB²Ð ¢æÆæ²Ö'Fâ°¢F7Æ¢æÆæRÖfÆW°¢ÆvâÖFV×3¢6VçFW#°¢v¢G°¢FFæs¢G°¢&÷&FW"×&FW3¢G°¢föçB×6¦S¢°¢FWBÖFV6÷&Föã¢æöæS°¢6öÆ÷#¢f"Ò×FWBÖFÒ°¢&6¶w&÷VæC¢f"Ò×7W&f6S"°¢&÷&FW#¢6öÆBf"ÒÖ&÷&FW"°¢G&ç6Föã¢ÆÂãW3°¢vFR×76S¢æ÷w&°¢Ö&vã¢'°¢Ð¢æÆæ²Ö'Fã¦÷fW"°¢6öÆ÷#¢f"Ò×FWB°¢&÷&FW"Ö6öÆ÷#¢f"ÒÖ66VçBÖFÒ°¢&6¶w&÷VæC¢&v&ÂCÂ#SRÂã°¢Ð ¢æV×G×7FFR°¢FFæs¢cG3'°¢FWBÖÆvã¢6VçFW#°¢6öÆ÷#¢f"Ò×FWBÖFÒ°¢Ð¢æV×G×7FFR2²föçB×6¦S¢²Ö&vâÖ&÷GFöÓ¢²6öÆ÷#¢f"Ò×FWB²Ð¢æV×G×7FFR²föçB×6¦S¢G²Ö×vGF¢S²Ö&vã¢WFó²ÆæRÖVvC¢ãs²Ð ¢æW÷'BÖ'Fâ°¢FFæs¢g°¢&6¶w&÷VæC¢f"Ò×7W&f6S"°¢&÷&FW#¢6öÆBf"ÒÖ&÷&FW"°¢&÷&FW"×&FW3¢g°¢6öÆ÷#¢f"Ò×FWB°¢föçB×6¦S¢7°¢7W'6÷#¢öçFW#°¢G&ç6Föã¢ÆÂãW3°¢Ð¢æW÷'BÖ'Fã¦÷fW"°¢&÷&FW"Ö6öÆ÷#¢f"ÒÖ66VçBÖFÒ°¢&6¶w&÷VæC¢&v&ÂCÂ#SRÂã°¢Ð¢æW÷'BÖ'Fã¦F6&ÆVB²÷6G¢ãC²7W'6÷#¢æ÷BÖÆÆ÷vVC²Ð ¢çV"Ö6VÆÂ²föçB×f&çBÖçVÖW&3¢F'VÆ"ÖçV×3²Ð ¢ææò×&W7VÇG2°¢FFæs¢C3'°¢FWBÖÆvã¢6VçFW#°¢6öÆ÷#¢f"Ò×FWBÖFÒ°¢föçB×6¦S¢G°¢Ð ¢æ&FvR°¢F7Æ¢æÆæRÖ&Æö6³°¢FFæs¢'g°¢&÷&FW"×&FW3¢7°¢föçB×6¦S¢°¢föçB×vVvC¢c°¢FWB×G&ç6f÷&Ó¢WW&66S°¢ÆWGFW"×76æs¢ãW°¢Ö&vâÖÆVgC¢°¢fW'F6ÂÖÆvã¢ÖFFÆS°¢Ð¢æ&FvR×6×ÆR²&6¶w&÷VæC¢&v&#SÂÂ3bÂãR²6öÆ÷#¢f"Ò×VÆÆ÷r²Ð¢æ&FvRÖÆfR²&6¶w&÷VæC¢&v&sBÂ##"Â#ÂãR²6öÆ÷#¢f"ÒÖw&VVâ²Ð ¢ÖVFÖ×vGF¢sc°¢æ6öçG&öÇ2²FFæs¢'g²Ð¢æVFW"²FFæs¢g²fÆWÖF&V7Föã¢6öÇVÖã²v¢'²Ð¢FBÂF²FFæs¢²Ð¢ç7FG2²FFæs¢g²Ð¢Ð£Â÷7GÆSà£ÂöVCà£Æ&öGà £ÆFb6Æ73Ò&VFW"#à¢ÆFb6Æ73Ò&VFW"ÖÆVgB#à¢ÆåB6÷W&6W"Ç7â6Æ73Ò&&FvR&FvR×6×ÆR"CÒ&FF&FvR#ç6×ÆRFFÂ÷7ããÂöà¢Çå6V&6f÷&ÖW"B7GVFVçG2g&öÒF÷52&öw&×2(	B2Â77FV×2Â&6FV7GW&RbÖ÷&SÂ÷à¢ÂöFcà¢ÆFb6Æ73Ò&VFW"×&vB#à¢Æ&VcÒ&GG3¢òövFV"æ6öÒõõU%õU4U$äÔR÷B×6÷W&6W""CÒ&vFV$Ææ²#ävDV#Âöà¢ÂöFcà£ÂöFcà £ÆFb6Æ73Ò&ÆöFærÖ&""CÒ&ÆöFæt&"#ãÂöFcà £ÆFb6Æ73Ò'FööÆ&"#à¢Ç7â6Æ73Ò'FööÆ&"ÖÆ&VÂ#äFF6÷W&6S£Â÷7ãà¢Ç7âCÒ&FF6÷W&6R"7GÆSÒ&6öÆ÷#¢f"Ò×FWB²föçB×6¦S¢7²#äÆöFærââãÂ÷7ãà¢ÆÆ&VÂ6Æ73Ò'WÆöBÖ'Fâ"7GÆSÒ&Ö&vâÖÆVgC¢WFó²#à¢WÆöB7W7FöÒFF¢ÆçWBGSÒ&fÆR"CÒ&fÆTçWB"66WCÒ"æ§6öâÂæ77b#à¢ÂöÆ&VÃà¢Æ'WGFöâ6Æ73Ò&W÷'BÖ'Fâ"CÒ&W÷'D'Fâ"F6&ÆVCäW÷'BfÇFW&VB55cÂö'WGFöãà£ÂöFcà £ÆFb6Æ73Ò&6öçG&öÇ2#à¢ÆçWBGSÒ'FWB"6Æ73Ò'6V&6Ö&÷"CÒ'6V&6&÷"Æ6VöÆFW#Ò%6V&6'æÖRÂVæfW'6GÂGf6÷"Â&VÂfVçVRâââ#à¢Ç6VÆV7BCÒ&fÇFW%Væb#ãÆ÷FöâfÇVSÒ"#äÆÂVæfW'6FW3Âö÷FöããÂ÷6VÆV7Cà¢Ç6VÆV7BCÒ&fÇFW$&V#ãÆ÷FöâfÇVSÒ"#äÆÂ&V3Âö÷FöããÂ÷6VÆV7Cà¢Ç6VÆV7BCÒ&fÇFW$6öæfFVæ6R#à¢Æ÷FöâfÇVSÒ"#äÆÂ6öæfFVæ6SÂö÷Föãà¢Æ÷FöâfÇVSÒ&v#ävÂö÷Föãà¢Æ÷FöâfÇVSÒ&ÖVFVÒ#äÖVFVÓÂö÷Föãà¢Æ÷FöâfÇVSÒ&Æ÷r#äÆ÷sÂö÷Föãà¢Â÷6VÆV7Cà¢Ç6VÆV7BCÒ&fÇFW%V"#ãÆ÷FöâfÇVSÒ"#äÆÂV'3Âö÷FöããÂ÷6VÆV7Cà£ÂöFcà £ÆFb6Æ73Ò'7FG2"CÒ'7FG4&"#à¢ÆFcå6÷værÇ7â6Æ73Ò'7FB×fÇVR"CÒ'6÷t6÷VçB#ãÂ÷7ãâöbÇ7â6Æ73Ò'7FB×fÇVR"CÒ'F÷FÄ6÷VçB#ãÂ÷7ãâ6æFFFW3ÂöFcà¢ÆFcåVæfW'6FW3¢Ç7â6Æ73Ò'7FB×fÇVR"CÒ'Væd6÷VçB#ãÂ÷7ããÂöFcà¢ÆFcäGf6÷'3¢Ç7â6Æ73Ò'7FB×fÇVR"CÒ&Gf6÷$6÷VçB#ãÂ÷7ããÂöFcà£ÂöFcà £ÆFb6Æ73Ò'F&ÆR×w&#à£ÇF&ÆSà¢ÇFVCà¢ÇG#à¢ÇFFF×6÷'CÒ&æÖR#äæÖRÇ7â6Æ73Ò'6÷'BÖ'&÷r#ãÂ÷7ããÂ÷Fà¢ÇFFF×6÷'CÒ'VæfW'6G#åVæfW'6GÇ7â6Æ73Ò'6÷'BÖ'&÷r#ãÂ÷7ããÂ÷Fà¢ÇFFF×6÷'CÒ&Gf6÷"#äGf6÷"Ç7â6Æ73Ò'6÷'BÖ'&÷r#ãÂ÷7ããÂ÷Fà¢ÇFFF×6÷'CÒ&&V2#ä&V2Ç7â6Æ73Ò'6÷'BÖ'&÷r#ãÂ÷7ããÂ÷Fà¢ÇFFF×6÷'CÒ&6öæfFVæ6R#ä6öæfFVæ6RÇ7â6Æ73Ò'6÷'BÖ'&÷r#ãÂ÷7ããÂ÷Fà¢ÇFFF×6÷'CÒ&6öWF÷%ö6÷VçB#ä6òÖWF÷&VBÇ7â6Æ73Ò'6÷'BÖ'&÷r#ãÂ÷7ããÂ÷Fà¢ÇFFF×6÷'CÒ&w&GVFöå÷V%öW7B#äW7Bâw&BÇ7â6Æ73Ò'6÷'BÖ'&÷r#ãÂ÷7ããÂ÷Fà¢ÇFäÆæ·3Â÷Fà¢Â÷G#à¢Â÷FVCà¢ÇF&öGCÒ'F&ÆT&öG#ãÂ÷F&öGà£Â÷F&ÆSà£ÂöFcà £ÆFb6Æ73Ò&V×G×7FFR"CÒ&V×G7FFR"7GÆSÒ&F7Æ¦æöæS²#à¢Æ3äæòFFÆöFVCÂö3à¢ÇåWÆöB7GVFVçG2æ§6öâ÷"Eö6æFFFW2æ77bfÆRW6ærFR'WGFöâ&÷fRÂ÷"G&ræBG&÷öçFòF2vRãÂ÷à£ÂöFcà £ÆFb6Æ73Ò&æò×&W7VÇG2"CÒ&æõ&W7VÇG2"7GÆSÒ&F7Æ¦æöæS²#à¢æò6æFFFW2ÖF6÷W"fÇFW'2âG''&öFVæær÷W"6V&6à£ÂöFcà £Ç67&Cà¦ÆWBÆÅ7GVFVçG2ÒµÓ°¦ÆWBfÇFW&VE7GVFVçG2ÒµÓ°¦ÆWB6÷'D6öÂÒv6öWF÷%ö6÷VçBs°¦ÆWB6÷'DF"ÒÓ° ¢òò)H)HWFòÖÆöBFFg&öÒFF÷7GVFVçG2æ§6öâ)H)H)H)H)H)H  ¦7æ2gVæ7FöâWFôÆöDFF°¢6öç7BÆöFæt&"ÒFö7VÖVçBævWDVÆVÖVçD'BvÆöFæt&"r°¢ÆöFæt&"æ6Æ74Æ7BæFBv7FfRr° ¢òòG'fWF6ærFR'VæFÆVB¥4ôâFF¢6öç7BF2Ò²vFF÷7GVFVçG2æ§6öârÂrâöFF÷7GVFVçG2æ§6öârÂrââöFF÷7GVFVçG2æ§6öâuÓ°¢ÆWBÆöFVBÒfÇ6S° ¢f÷"6öç7BFöbF2°¢G'°¢6öç7B&W7ÒvBfWF6F°¢b&W7æö²°¢6öç7BFWBÒvB&W7çFWB°¢6öç7BFFÒ¥4ôâç'6RFWB°¢ævW7D¥4ôâFF°¢6öç7BÖWFÒFFæÖWFFFÇÂ·Ó°¢6öç7B56×ÆRÒÖWFææ÷FRÇÂrrçFôÆ÷vW$66Rææ6ÇVFW2w6×ÆRr°¢Fö7VÖVçBævWDVÆVÖVçD'BvFF6÷W&6RrçFWD6öçFVçBÐ¢G¶ÆÅ7GVFVçG2æÆVæwFÒ6æFFFW2g&öÒG¶ÖWFçF÷FÅ÷&öfW76÷'2ÇÂsòwÒ&öfW76÷'2G¶ÖWFæ&V3òæ¦öârÂrÇÂvÆÂ&V2wÒ°¢6öç7B&FvRÒFö7VÖVçBævWDVÆVÖVçD'BvFF&FvRr°¢b56×ÆR°¢&FvRçFWD6öçFVçBÒw6×ÆRFFs°¢&FvRæ6Æ74æÖRÒv&FvR&FvR×6×ÆRs°¢ÒVÇ6R°¢&FvRçFWD6öçFVçBÒvÆfRFFs°¢&FvRæ6Æ74æÖRÒv&FvR&FvRÖÆfRs°¢Ð¢ÆöFVBÒG'VS°¢'&V³°¢Ð¢Ò6F6R°¢òò6öçFçVRFòæWBF¢Ð¢Ð ¢bÆöFVB°¢Fö7VÖVçBævWDVÆVÖVçD'BvFF6÷W&6RrçFWD6öçFVçBÒtæòFFfÆRf÷VæB(	BWÆöBöæR&÷fRs°¢Fö7VÖVçBævWDVÆVÖVçD'BvV×G7FFRrç7GÆRæF7ÆÒv&Æö6²s°¢Fö7VÖVçBævWDVÆVÖVçD'BvFF&FvRrç7GÆRæF7ÆÒvæöæRs°¢Ð ¢ÆöFæt&"æ6Æ74Æ7Bç&VÖ÷fRv7FfRr°¢Fö7VÖVçBævWDVÆVÖVçD'BvW÷'D'FâræF6&ÆVBÒÆÅ7GVFVçG2æÆVæwFÓÓÒ°§Ð ¢òò)H)HFFævW7Föâ)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H  ¦gVæ7FöâævW7D¥4ôâFF°¢ÆÅ7GVFVçG2ÒFFç7GVFVçG2ÇÂFF°¢ÆÅ7GVFVçG2ÒÆÅ7GVFVçG2æÖæ÷&ÖÆ¦U7GVFVçB°¢÷VÆFTfÇFW'2°¢ÇfÇFW'2°§Ð ¦gVæ7FöâævW7D55bFWB°¢6öç7BÆæW2ÒFWBç7ÆBuÆâr°¢bÆæW2æÆVæwFÂ"&WGW&ã°¢6öç7BVFW'2Ò'6T55e&÷rÆæW5³Ò°¢ÆÅ7GVFVçG2ÒµÓ°¢f÷"ÆWBÒ²ÂÆæW2æÆVæwF²²²°¢bÆæW5¶ÒçG&Ò6öçFçVS°¢6öç7BfÇVW2Ò'6T55e&÷rÆæW5¶Ò°¢6öç7Bö&¢Ò·Ó°¢VFW'2æf÷$V6ÂGÓâ²ö&¥¶çG&ÒÒÒfÇVW5¶GÒÇÂrs²Ò°¢ÆÅ7GVFVçG2çW6æ÷&ÖÆ¦U7GVFVçBö&¢°¢Ð¢÷VÆFTfÇFW'2°¢ÇfÇFW'2°§Ð ¦gVæ7Föâæ÷&ÖÆ¦U7GVFVçB2°¢&WGW&â°¢ââç2À¢&V3¢'&æ4'&2æ&V2ò2æ&V2¢2æ&V2ÇÂrrç7ÆBõ³²ÅÕÇ2¢òæfÇFW"&ööÆVâÀ¢7FfU÷V'3¢'&æ4'&2æ7FfU÷V'2ò2æ7FfU÷V'2¢2æ7FfU÷V'2ÇÂrrçFõ7G&ærç7ÆBõ³²ÅÕÇ2¢òæfÇFW"&ööÆVâæÖçVÖ&W"À¢fVçVW3¢'&æ4'&2çfVçVW2ò2çfVçVW2¢2çfVçVW2ÇÂrrç7ÆBõ³²ÅÕÇ2¢òæfÇFW"&ööÆVâÀ¢6÷W&6W3¢'&æ4'&2ç6÷W&6W2ò2ç6÷W&6W2¢2ç6÷W&6W2ÇÂrrç7ÆBõ³²ÅÕÇ2¢òæfÇFW"&ööÆVâÀ¢6öWF÷%ö6÷VçC¢'6TçB2æ6öWF÷%ö6÷VçBÇÂÀ¢w&GVFöå÷V%öW7C¢'6TçB2æw&GVFöå÷V%öW7BÇÂçVÆÂÀ¢Ó°§Ð ¦gVæ7Föâ'6T55e&÷r&÷r°¢6öç7B&W7VÇBÒµÓ°¢ÆWB7W'&VçBÒrs°¢ÆWBåV÷FW2ÒfÇ6S°¢f÷"ÆWBÒ²Â&÷ræÆVæwF²²²°¢6öç7B6Ò&÷u¶Ó°¢b6ÓÓÒr"r²åV÷FW2ÒåV÷FW3²Ð¢VÇ6Rb6ÓÓÒrÂrbbåV÷FW2²&W7VÇBçW67W'&VçB²7W'&VçBÒrs²Ð¢VÇ6R²7W'&VçB³Ò6²Ð¢Ð¢&W7VÇBçW67W'&VçB°¢&WGW&â&W7VÇC°§Ð ¢òò)H)HfÆRWÆöB÷fW'&FR)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H  ¦Fö7VÖVçBævWDVÆVÖVçD'BvfÆTçWBræFDWfVçDÆ7FVæW"v6ævRrÂRÓâ°¢6öç7BfÆRÒRçF&vWBæfÆW5³Ó°¢bfÆR&WGW&ã°¢6öç7B&VFW"ÒæWrfÆU&VFW"°¢&VFW"æöæÆöBÒWbÓâ°¢6öç7BFWBÒWbçF&vWBç&W7VÇC°¢bfÆRææÖRæVæG5vFræ§6öâr°¢ævW7D¥4ôâ¥4ôâç'6RFWB°¢ÒVÇ6RbfÆRææÖRæVæG5vFræ77br°¢ævW7D55bFWB°¢Ð¢Fö7VÖVçBævWDVÆVÖVçD'BvFF6÷W&6RrçFWD6öçFVçBÒÆöFVC¢G¶fÆRææÖWÒG¶ÆÅ7GVFVçG2æÆVæwFÒ6æFFFW2°¢Fö7VÖVçBævWDVÆVÖVçD'BvFF&FvRrçFWD6öçFVçBÒv7W7FöÒs°¢Fö7VÖVçBævWDVÆVÖVçD'BvFF&FvRræ6Æ74æÖRÒv&FvR&FvRÖÆfRs°¢Fö7VÖVçBævWDVÆVÖVçD'BvW÷'D'FâræF6&ÆVBÒfÇ6S°¢Ó°¢&VFW"ç&VD5FWBfÆR°§Ò° ¢òòG&rbG&÷ ¦Fö7VÖVçBæ&öGæFDWfVçDÆ7FVæW"vG&v÷fW"rÂRÓâ²Rç&WfVçDFVfVÇB²Ò°¦Fö7VÖVçBæ&öGæFDWfVçDÆ7FVæW"vG&÷rÂRÓâ°¢Rç&WfVçDFVfVÇB°¢bRæFFG&ç6fW"æfÆW2æÆVæwFâ°¢6öç7BfÆRÒRæFFG&ç6fW"æfÆW5³Ó°¢6öç7B&VFW"ÒæWrfÆU&VFW"°¢&VFW"æöæÆöBÒWbÓâ°¢6öç7BFWBÒWbçF&vWBç&W7VÇC°¢bfÆRææÖRæVæG5vFræ§6öârævW7D¥4ôâ¥4ôâç'6RFWB°¢VÇ6RbfÆRææÖRæVæG5vFræ77brævW7D55bFWB°¢Fö7VÖVçBævWDVÆVÖVçD'BvFF6÷W&6RrçFWD6öçFVçBÒÆöFVC¢G¶fÆRææÖWÒG¶ÆÅ7GVFVçG2æÆVæwFÒ6æFFFW2°¢Fö7VÖVçBævWDVÆVÖVçD'BvFF&FvRrçFWD6öçFVçBÒv7W7FöÒs°¢Fö7VÖVçBævWDVÆVÖVçD'BvFF&FvRræ6Æ74æÖRÒv&FvR&FvRÖÆfRs°¢Fö7VÖVçBævWDVÆVÖVçD'BvW÷'D'FâræF6&ÆVBÒfÇ6S°¢Ó°¢&VFW"ç&VD5FWBfÆR°¢Ð§Ò° ¢òò)H)HfÇFW&ær)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H  ¦gVæ7Föâ÷VÆFTfÇFW'2°¢6öç7BVæg2Ò²ââææWr6WBÆÅ7GVFVçG2æÖ2Óâ2çVæfW'6GÒæfÇFW"&ööÆVâç6÷'B°¢6öç7B&V2Ò²ââææWr6WBÆÅ7GVFVçG2æfÆDÖ2Óâ2æ&V2ÒæfÇFW"&ööÆVâç6÷'B°¢6öç7BV'2Ò²ââææWr6WBÆÅ7GVFVçG2æÖ2Óâ2æw&GVFöå÷V%öW7BæfÇFW"&ööÆVâÒç6÷'B° ¢6öç7BVæe6VÆV7BÒFö7VÖVçBævWDVÆVÖVçD'BvfÇFW%Væbr°¢Væe6VÆV7BæææW$DÔÂÒsÆ÷FöâfÇVSÒ"#äÆÂVæfW'6FW3Âö÷Föãâr°¢Væg2æÖRÓâÆ÷FöâfÇVSÒ"G·WÒ#âG·WÓÂö÷Föãææ¦öârr° ¢6öç7B&V6VÆV7BÒFö7VÖVçBævWDVÆVÖVçD'BvfÇFW$&Vr°¢&V6VÆV7BæææW$DÔÂÒsÆ÷FöâfÇVSÒ"#äÆÂ&V3Âö÷Föãâr°¢&V2æÖÓâÆ÷FöâfÇVSÒ"G¶Ò#âG¶ÓÂö÷Föãææ¦öârr° ¢6öç7BV%6VÆV7BÒFö7VÖVçBævWDVÆVÖVçD'BvfÇFW%V"r°¢V%6VÆV7BæææW$DÔÂÒsÆ÷FöâfÇVSÒ"#äÆÂV'3Âö÷Föãâr°¢V'2æÖÓâÆ÷FöâfÇVSÒ"G·Ò#âG·ÓÂö÷Föãææ¦öârr°§Ð ¦gVæ7FöâÇfÇFW'2°¢6öç7BVW'ÒFö7VÖVçBævWDVÆVÖVçD'Bw6V&6&÷rçfÇVRçFôÆ÷vW$66R°¢6öç7BVæbÒFö7VÖVçBævWDVÆVÖVçD'BvfÇFW%VæbrçfÇVS°¢6öç7B&VÒFö7VÖVçBævWDVÆVÖVçD'BvfÇFW$&VrçfÇVS°¢6öç7B6öæfFVæ6RÒFö7VÖVçBævWDVÆVÖVçD'BvfÇFW$6öæfFVæ6RrçfÇVS°¢6öç7BV"ÒFö7VÖVçBævWDVÆVÖVçD'BvfÇFW%V"rçfÇVS° ¢fÇFW&VE7GVFVçG2ÒÆÅ7GVFVçG2æfÇFW"2Óâ°¢bVW'°¢6öç7B6V&6&ÆRÒ·2ææÖRÂ2çVæfW'6GÂ2æGf6÷"Ââââ2æ&V2ÇÂµÒÂâââ2çfVçVW2ÇÂµÒÒæ¦öârrçFôÆ÷vW$66R°¢b6V&6&ÆRææ6ÇVFW2VW'&WGW&âfÇ6S°¢Ð    if (univ && s.university !== univ) return false;
+    if (area && !(s.areas || []).includes(area)) return false;
+    if (confidence && s.confidence !== confidence) return false;
+    if (year && s.graduation_year_est !== parseInt(year)) return false;
+    return true;
+  });
+
+  sortStudents();
+  renderTable();
+  updateStats();
+}
+
+function sortStudents() {
+  filteredStudents.sort((a, b) => {
+    let va = a[sortCol] ?? '';
+    let vb = b[sortCol] ?? '';
+    if (typeof va === 'number' && typeof vb === 'number') return (va - vb) * sortDir;
+    if (Array.isArray(va)) va = va.join(', ');
+    if (Array.isArray(vb)) vb = vb.join(', ');
+    return String(va).localeCompare(String(vb)) * sortDir;
+  });
+}
+
+// ââ Rendering ââââââââââââââââââââââââââââââââââââ
+
+function renderTable() {
+  const tbody = document.getElementById('tableBody');
+  const empty = document.getElementById('emptyState');
+  const noRes = document.getElementById('noResults');
+
+  if (allStudents.length === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    noRes.style.display = 'none';
+    return;
+  }
+
+  empty.style.display = 'none';
+
+  if (filteredStudents.length === 0) {
+    tbody.innerHTML = '';
+    noRes.style.display = 'block';
+    return;
+  }
+
+  noRes.style.display = 'none';
+
+  const limit = 500;
+  const toRender = filteredStudents.slice(0, limit);
+
+  tbody.innerHTML = toRender.map(s => {
+    const areaTags = (s.areas || []).map(a => `<span class="tag tag-area">${esc(a)}</span>`).join('');
+    const confClass = `tag-confidence-${s.confidence || 'low'}`;
+    const name = esc(s.name || '');
+    const nameQ = encodeURIComponent(s.name || '');
+
+    return `<tr>
+      <td class="name-cell">${name}</td>
+      <td>${esc(s.university || '')}</td>
+      <td>${esc(s.advisor || '')}</td>
+      <td>${areaTags}</td>
+      <td><span class="tag ${confClass}">${esc(s.confidence || 'unknown')}</span></td>
+      <td class="year-cell">${s.coauthor_count || '\u2014'}</td>
+      <td class="year-cell">${s.graduation_year_est || '\u2014'}</td>
+      <td>
+        <a class="link-btn" href="https://www.linkedin.com/search/results/people/?keywords=${nameQ}" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="link-btn" href="https://scholar.google.com/scholar?q=author%3A%22${nameQ}%22" target="_blank" rel="noopener">Scholar</a>
+        <a class="link-btn" href="https://dblp.org/search?q=${nameQ}" target="_blank" rel="noopener">DBLP</a>
+      </td>
+    </tr>`;
+  }).join('');
+
+  if (filteredStudents.length > limit) {
+    tbody.innerHTML += `<tr><td colspan="8" style="text-align:center; color:var(--text-dim); padding:16px;">
+      Showing first ${limit} of ${filteredStudents.length} results. Use filters to narrow down.
+    </td></tr>`;
+  }
+}
+
+function updateStats() {
+  document.getElementById('showCount').textContent = filteredStudents.length;
+  document.getElementById('totalCount').textContent = allStudents.length;
+  document.getElementById('univCount').textContent = new Set(filteredStudents.map(s => s.university)).size;
+  document.getElementById('advisorCount').textContent = new Set(filteredStudents.map(s => s.advisor)).size;
+}
+
+function esc(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// ââ Events âââââââââââââââââââââââââââââââââââââââ
+
+document.getElementById('searchBox').addEventListener('input', debounce(applyFilters, 200));
+document.getElementById('filterUniv').addEventListener('change', applyFilters);
+document.getElementById('filterArea').addEventListener('change', applyFilters);
+document.getElementById('filterConfidence').addEventListener('change', applyFilters);
+document.getElementById('filterYear').addEventListener('change', applyFilters);
+
+// Column sorting
+document.querySelectorAll('thead th[data-sort]').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.sort;
+    if (sortCol === col) { sortDir *= -1; }
+    else { sortCol = col; sortDir = col === 'name' ? 1 : -1; }
+    document.querySelectorAll('thead th .sort-arrow').forEach(a => a.textContent = '');
+    th.querySelector('.sort-arrow').textContent = sortDir === 1 ? '\u25B2' : '\u25BC';
+    applyFilters();
+  });
+});
+
+// Export
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const headers = ['name', 'university', 'advisor', 'areas', 'confidence', 'coauthor_count', 'graduation_year_est', 'active_years', 'venues', 'sources'];
+  const rows = filteredStudents.map(s => {
+    return headers.map(h => {
+      let v = s[h];
+      if (Array.isArray(v)) v = v.join('; ');
+      if (v === null || v === undefined) v = '';
+      v = String(v);
+      if (v.includes(',') || v.includes('"') || v.includes('\n')) {
+        v = '"' + v.replace(/"/g, '""') + '"';
+      }
+      return v;
+    }).join(',');
+  });
+  const csv = headers.join(',') + '\n' + rows.join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `phd_candidates_filtered_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+function debounce(fn, ms) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), ms);
+  };
+}
+
+// ââ Init âââââââââââââââââââââââââââââââââââââââââ
+autoLoadData();
+</script>
+</body>
+</html>
