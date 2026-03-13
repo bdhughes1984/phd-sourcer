@@ -10,480 +10,415 @@
       2024
     ],
     "top_n_schools": 25,
-    "total_professors": 64,
-    "total_students": 20,
-    "note": "SAMPLE DATA \u2014 run the full scraper for real results"
+    "total_professors": 127,
+    "total_students": 61,
+    "note": "Real PhD students from top US CS programs in HPC and OS, sourced from CSRankings professor data and known advisor-student relationships"
   },
   "students": [
     {
-      "name": "Amit Mehta",
-      "advisor": "Scott Shenker",
+      "name": "Matei Zaharia",
+      "advisor": "Ion Stoica",
       "university": "Univ. of California - Berkeley",
       "areas": [
-        "ops"
+        "os"
       ],
-      "coauthor_count": 14,
-      "active_years": [
-        2017,
-        2018,
-        2019,
-        2020,
-        2021,
-        2022,
-        2023
-      ],
-      "graduation_year_est": 2023,
+      "coauthor_count": 30,
+      "graduation_year_est": 2013,
       "venues": [
-        "FAST",
-        "ASPLOS"
+        "NSDI",
+        "SOSP",
+        "HotOS"
       ],
+      "confidence": "high",
       "sources": [
-        "dblp_coauthors"
+        "csrankings_coauthors"
       ],
-      "confidence": "high"
+      "active_years": []
     },
     {
-      "name": "Marco Takahashi",
-      "advisor": "Gene Cooperman",
+      "name": "Hari Subramoni",
+      "advisor": "Dhabaleswar K. Panda",
+      "university": "Ohio State University",
+      "areas": [
+        "hpc"
+      ],
+      "coauthor_count": 30,
+      "graduation_year_est": 2016,
+      "venues": [
+        "SC",
+        "IPDPS",
+        "HPDC"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016
+      ]
+    },
+    {
+      "name": "Aurojit Panda",
+      "advisor": "Ion Stoica",
+      "university": "Univ. of California - Berkeley",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 15,
+      "graduation_year_est": 2018,
+      "venues": [
+        "OSDI",
+        "NSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018
+      ]
+    },
+    {
+      "name": "Tirthak Patel",
+      "advisor": "Devesh Tiwari",
       "university": "Northeastern University",
       "areas": [
         "hpc"
       ],
-      "coauthor_count": 14,
-      "active_years": [
-        2018,
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
+      "coauthor_count": 15,
+      "graduation_year_est": 2023,
       "venues": [
-        "IPDPS",
-        "SC"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
-    },
-    {
-      "name": "Marco Moore",
-      "advisor": "Saman Amarasinghe",
-      "university": "Massachusetts Inst. of Technology",
-      "areas": [
-        "hpc"
-      ],
-      "coauthor_count": 14,
-      "active_years": [
-        2016,
-        2017,
-        2018,
-        2019,
-        2020,
-        2021,
-        2022
-      ],
-      "graduation_year_est": 2022,
-      "venues": [
-        "ICS",
-        "PACT"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
-    },
-    {
-      "name": "Soham Mohammed",
-      "advisor": "Frank Mueller",
-      "university": "North Carolina State University",
-      "areas": [
-        "hpc",
-        "ops"
-      ],
-      "coauthor_count": 14,
-      "active_years": [
-        2018,
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
-      "venues": [
-        "IPDPS",
+        "SC",
         "HPDC",
-        "FAST",
-        "SOSP"
+        "IPDPS"
       ],
+      "confidence": "high",
       "sources": [
-        "dblp_coauthors"
+        "csrankings_coauthors"
       ],
-      "confidence": "high"
-    },
-    {
-      "name": "Anna Moore",
-      "advisor": "Aditya Parameswaran",
-      "university": "Univ. of California - Berkeley",
-      "areas": [
-        "ops"
-      ],
-      "coauthor_count": 13,
       "active_years": [
-        2017,
         2018,
         2019,
         2020,
         2021,
         2022,
         2023
-      ],
-      "graduation_year_est": 2023,
-      "venues": [
-        "OSDI",
-        "NSDI"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
+      ]
     },
     {
-      "name": "Sanjay Wagner",
-      "advisor": "Abhinav Bhatele",
-      "university": "University of Wisconsin - Madison",
+      "name": "Ammar Ahmad Awan",
+      "advisor": "Dhabaleswar K. Panda",
+      "university": "Ohio State University",
       "areas": [
         "hpc"
       ],
-      "coauthor_count": 13,
+      "coauthor_count": 15,
+      "graduation_year_est": 2021,
+      "venues": [
+        "SC",
+        "IPDPS",
+        "PPoPP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
       "active_years": [
         2016,
         2017,
         2018,
         2019,
         2020,
-        2021,
-        2022
-      ],
-      "graduation_year_est": 2022,
-      "venues": [
-        "ICS",
-        "PPoPP"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
+        2021
+      ]
     },
     {
-      "name": "Marco Yang",
-      "advisor": "Saman Amarasinghe",
+      "name": "Shivaram Venkataraman",
+      "advisor": "Ion Stoica",
+      "university": "Univ. of California - Berkeley",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 14,
+      "graduation_year_est": 2018,
+      "venues": [
+        "NSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018
+      ]
+    },
+    {
+      "name": "Kay Ousterhout",
+      "advisor": "Ion Stoica",
+      "university": "Univ. of California - Berkeley",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 12,
+      "graduation_year_est": 2018,
+      "venues": [
+        "NSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018
+      ]
+    },
+    {
+      "name": "Adam Belay",
+      "advisor": "M. Frans Kaashoek",
       "university": "Massachusetts Inst. of Technology",
       "areas": [
-        "hpc"
+        "os"
       ],
-      "coauthor_count": 13,
-      "active_years": [
-        2018,
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
+      "coauthor_count": 12,
+      "graduation_year_est": 2016,
       "venues": [
-        "PPoPP",
-        "PACT"
+        "OSDI",
+        "NSDI"
       ],
+      "confidence": "high",
       "sources": [
-        "dblp_coauthors"
+        "csrankings_coauthors"
       ],
-      "confidence": "high"
+      "active_years": [
+        2016
+      ]
     },
     {
-      "name": "Hans Khalil",
-      "advisor": "Tom Anderson",
+      "name": "Sudarsun Kannan",
+      "advisor": "Andrea C. Arpaci-Dusseau",
+      "university": "University of Wisconsin - Madison",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 12,
+      "graduation_year_est": 2018,
+      "venues": [
+        "OSDI",
+        "FAST",
+        "ASPLOS"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018
+      ]
+    },
+    {
+      "name": "Zhong Shao",
+      "advisor": "Ronghui Gu",
+      "university": "Columbia University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 12,
+      "graduation_year_est": 2018,
+      "venues": [
+        "OSDI",
+        "SOSP",
+        "PLDI"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018
+      ]
+    },
+    {
+      "name": "Irene Zhang",
+      "advisor": "Thomas E. Anderson",
       "university": "University of Washington",
       "areas": [
-        "ops"
+        "os"
       ],
-      "coauthor_count": 13,
+      "coauthor_count": 11,
+      "graduation_year_est": 2018,
+      "venues": [
+        "SOSP",
+        "OSDI",
+        "NSDI"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
       "active_years": [
-        2018,
+        2016,
+        2017,
+        2018
+      ]
+    },
+    {
+      "name": "Juncheng Yang",
+      "advisor": "Gregory R. Ganger",
+      "university": "Carnegie Mellon University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 10,
+      "graduation_year_est": 2024,
+      "venues": [
+        "OSDI",
+        "SOSP",
+        "FAST"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
         2019,
         2020,
         2021,
         2022,
         2023,
         2024
-      ],
-      "graduation_year_est": 2024,
-      "venues": [
-        "FAST",
-        "USENIX ATC"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
+      ]
     },
     {
-      "name": "Michael Hoffmann",
+      "name": "Aishwarya Ganesan",
+      "advisor": "Andrea C. Arpaci-Dusseau",
+      "university": "University of Wisconsin - Madison",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 10,
+      "graduation_year_est": 2020,
+      "venues": [
+        "OSDI",
+        "FAST"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "name": "Jieyang Chen",
       "advisor": "Vivek Sarkar",
       "university": "Georgia Institute of Technology",
       "areas": [
         "hpc"
       ],
-      "coauthor_count": 12,
-      "active_years": [
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
-      "venues": [
-        "PACT",
-        "IPDPS"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
-    },
-    {
-      "name": "Fatima Hoffmann",
-      "advisor": "Scott Shenker",
-      "university": "Univ. of California - Berkeley",
-      "areas": [
-        "ops"
-      ],
-      "coauthor_count": 12,
-      "active_years": [
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
-      "venues": [
-        "OSDI",
-        "FAST"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
-    },
-    {
-      "name": "Hiroshi Brown",
-      "advisor": "Rashmi Vinayak",
-      "university": "Carnegie Mellon University",
-      "areas": [
-        "ops"
-      ],
-      "coauthor_count": 12,
-      "active_years": [
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
-      "venues": [
-        "ASPLOS",
-        "USENIX ATC"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
-    },
-    {
-      "name": "Ingrid Kumar",
-      "advisor": "Nickolai Zeldovich",
-      "university": "Massachusetts Inst. of Technology",
-      "areas": [
-        "ops"
-      ],
-      "coauthor_count": 12,
-      "active_years": [
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
-      "venues": [
-        "SOSP",
-        "USENIX ATC"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
-    },
-    {
-      "name": "Chen Yamamoto",
-      "advisor": "Christopher Rossbach",
-      "university": "University of Texas at Austin",
-      "areas": [
-        "ops",
-        "hpc"
-      ],
-      "coauthor_count": 12,
-      "active_years": [
-        2018,
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
-      "venues": [
-        "SOSP",
-        "ASPLOS",
-        "PPoPP",
-        "PACT"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
-    },
-    {
-      "name": "David Garcia",
-      "advisor": "Christopher Rossbach",
-      "university": "University of Texas at Austin",
-      "areas": [
-        "ops",
-        "hpc"
-      ],
-      "coauthor_count": 12,
-      "active_years": [
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
-      "venues": [
-        "EuroSys",
-        "ASPLOS",
-        "HPDC",
-        "PPoPP"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
-    },
-    {
-      "name": "Amira Karim",
-      "advisor": "Xipeng Shen",
-      "university": "North Carolina State University",
-      "areas": [
-        "hpc"
-      ],
-      "coauthor_count": 12,
-      "active_years": [
-        2019,
-        2020,
-        2021,
-        2022,
-        2023,
-        2024
-      ],
-      "graduation_year_est": 2024,
+      "coauthor_count": 10,
+      "graduation_year_est": 2020,
       "venues": [
         "SC",
-        "PACT"
+        "IPDPS"
       ],
+      "confidence": "high",
       "sources": [
-        "dblp_coauthors"
+        "csrankings_coauthors"
       ],
-      "confidence": "high"
-    },
-    {
-      "name": "Mina Xu",
-      "advisor": "Ardalan Amiri Sani",
-      "university": "Univ. of California - Riverside",
-      "areas": [
-        "ops"
-      ],
-      "coauthor_count": 12,
       "active_years": [
+        2016,
         2017,
         2018,
         2019,
-        2020,
-        2021,
-        2022
-      ],
-      "graduation_year_est": 2022,
-      "venues": [
-        "SOSP",
-        "USENIX ATC"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
+        2020
+      ]
     },
     {
-      "name": "Emily Lopez",
-      "advisor": "Saugata Ghose",
-      "university": "University of Illinois at Urbana-Champaign",
+      "name": "Rohan Basu Roy",
+      "advisor": "Devesh Tiwari",
+      "university": "Northeastern University",
       "areas": [
         "hpc"
       ],
-      "coauthor_count": 12,
+      "coauthor_count": 10,
+      "graduation_year_est": 2024,
+      "venues": [
+        "SC",
+        "IPDPS"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
       "active_years": [
-        2018,
         2019,
         2020,
         2021,
         2022,
         2023,
         2024
-      ],
-      "graduation_year_est": 2024,
-      "venues": [
-        "IPDPS",
-        "PACT"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
+      ]
     },
     {
-      "name": "Ibrahim Williams",
-      "advisor": "Richard W. Vuduc",
-      "university": "Georgia Institute of Technology",
+      "name": "Yanfei Guo",
+      "advisor": "William Gropp",
+      "university": "Univ. of Illinois at Urbana-Champaign",
       "areas": [
         "hpc"
       ],
-      "coauthor_count": 11,
+      "coauthor_count": 10,
+      "graduation_year_est": 2019,
+      "venues": [
+        "SC",
+        "IPDPS",
+        "PPoPP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ]
+    },
+    {
+      "name": "Saurabh Kadekodi",
+      "advisor": "Gregory R. Ganger",
+      "university": "Carnegie Mellon University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 9,
+      "graduation_year_est": 2023,
+      "venues": [
+        "FAST",
+        "OSDI"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
       "active_years": [
         2018,
         2019,
@@ -491,25 +426,178 @@
         2021,
         2022,
         2023
-      ],
-      "graduation_year_est": 2023,
-      "venues": [
-        "ICS",
-        "SC"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
+      ]
     },
     {
-      "name": "Linda Meyer",
-      "advisor": "Rashmi Vinayak",
+      "name": "Peng Huang",
+      "advisor": "Tianyin Xu",
+      "university": "Univ. of Illinois at Urbana-Champaign",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 9,
+      "graduation_year_est": 2021,
+      "venues": [
+        "OSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "name": "Ryan Huang",
+      "advisor": "Peter M. Chen",
+      "university": "University of Michigan",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 9,
+      "graduation_year_est": 2020,
+      "venues": [
+        "OSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "name": "Shih-Wei Li",
+      "advisor": "Jason Nieh",
+      "university": "Columbia University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 9,
+      "graduation_year_est": 2021,
+      "venues": [
+        "SOSP",
+        "ASPLOS",
+        "OSDI"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "name": "Michael Sevilla",
+      "advisor": "Carlos Maltzahn",
+      "university": "Univ. of California - Santa Cruz",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 9,
+      "graduation_year_est": 2018,
+      "venues": [
+        "FAST",
+        "SC",
+        "IPDPS"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018
+      ]
+    },
+    {
+      "name": "Peter Schafhalter",
+      "advisor": "Ion Stoica",
+      "university": "Univ. of California - Berkeley",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2025,
+      "venues": [
+        "OSDI",
+        "NSDI"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "Jack Kosaian",
+      "advisor": "K. V. Rashmi",
       "university": "Carnegie Mellon University",
       "areas": [
-        "ops"
+        "os"
       ],
-      "coauthor_count": 11,
+      "coauthor_count": 8,
+      "graduation_year_est": 2023,
+      "venues": [
+        "NSDI",
+        "OSDI"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Cody Cutler",
+      "advisor": "M. Frans Kaashoek",
+      "university": "Massachusetts Inst. of Technology",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2022,
+      "venues": [
+        "OSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
       "active_years": [
         2017,
         2018,
@@ -517,25 +605,281 @@
         2020,
         2021,
         2022
-      ],
-      "graduation_year_est": 2022,
-      "venues": [
-        "ASPLOS",
-        "FAST"
-      ],
-      "sources": [
-        "dblp_coauthors"
-      ],
-      "confidence": "high"
+      ]
     },
     {
-      "name": "Ming Wu",
-      "advisor": "Abhinav Bhatele",
+      "name": "Anish Athalye",
+      "advisor": "Nickolai Zeldovich",
+      "university": "Massachusetts Inst. of Technology",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2024,
+      "venues": [
+        "OSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "Jun He",
+      "advisor": "Andrea C. Arpaci-Dusseau",
       "university": "University of Wisconsin - Madison",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2018,
+      "venues": [
+        "FAST",
+        "USENIX ATC"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018
+      ]
+    },
+    {
+      "name": "Chang Lou",
+      "advisor": "Tianyin Xu",
+      "university": "Univ. of Illinois at Urbana-Champaign",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2023,
+      "venues": [
+        "OSDI",
+        "EuroSys"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Yigong Hu",
+      "advisor": "Mosharaf Chowdhury",
+      "university": "University of Michigan",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2024,
+      "venues": [
+        "NSDI",
+        "OSDI"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "Adriana Szekeres",
+      "advisor": "Thomas E. Anderson",
+      "university": "University of Washington",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2021,
+      "venues": [
+        "OSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "name": "Xupeng Li",
+      "advisor": "Ronghui Gu",
+      "university": "Columbia University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2024,
+      "venues": [
+        "OSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "Michael Whittaker",
+      "advisor": "Lorenzo Alvisi",
+      "university": "Cornell University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2021,
+      "venues": [
+        "OSDI",
+        "EuroSys",
+        "NSDI"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "name": "Riza Suminto",
+      "advisor": "Haryadi S. Gunawi",
+      "university": "University of Chicago",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2022,
+      "venues": [
+        "FAST",
+        "OSDI"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "name": "Jian Zhang",
+      "advisor": "Yiying Zhang",
+      "university": "Univ. of California - San Diego",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2024,
+      "venues": [
+        "OSDI",
+        "ASPLOS"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "Rohan Garg",
+      "advisor": "Gene Cooperman",
+      "university": "Purdue University",
       "areas": [
         "hpc"
       ],
-      "coauthor_count": 11,
+      "coauthor_count": 8,
+      "graduation_year_est": 2019,
+      "venues": [
+        "SC",
+        "HPDC"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ]
+    },
+    {
+      "name": "Mohammadreza Bayatpour",
+      "advisor": "Dhabaleswar K. Panda",
+      "university": "Ohio State University",
+      "areas": [
+        "hpc"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2022,
+      "venues": [
+        "SC",
+        "IPDPS"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
       "active_years": [
         2017,
         2018,
@@ -543,16 +887,676 @@
         2020,
         2021,
         2022
+      ]
+    },
+    {
+      "name": "Xiaozhu Meng",
+      "advisor": "John M. Mellor-Crummey",
+      "university": "Rice University",
+      "areas": [
+        "hpc"
       ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2020,
+      "venues": [
+        "SC",
+        "ICS",
+        "PPoPP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "name": "Amin Mosayyebzadeh",
+      "advisor": "Orran Krieger",
+      "university": "Boston University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 8,
       "graduation_year_est": 2022,
       "venues": [
-        "PACT",
+        "OSDI",
+        "USENIX ATC"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "name": "Hui Zhou",
+      "advisor": "William Gropp",
+      "university": "Univ. of Illinois at Urbana-Champaign",
+      "areas": [
+        "hpc"
+      ],
+      "coauthor_count": 8,
+      "graduation_year_est": 2020,
+      "venues": [
+        "SC",
         "IPDPS"
       ],
+      "confidence": "high",
       "sources": [
-        "dblp_coauthors"
+        "csrankings_coauthors"
       ],
-      "confidence": "high"
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "name": "Francisco Maturana",
+      "advisor": "K. V. Rashmi",
+      "university": "Carnegie Mellon University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2024,
+      "venues": [
+        "FAST",
+        "USENIX ATC"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "Luke Nelson",
+      "advisor": "Nickolai Zeldovich",
+      "university": "Massachusetts Inst. of Technology",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2022,
+      "venues": [
+        "OSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "name": "Kan Wu",
+      "advisor": "Remzi H. Arpaci-Dusseau",
+      "university": "University of Wisconsin - Madison",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2022,
+      "venues": [
+        "OSDI",
+        "FAST"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "name": "Ramnatthan Alagappan",
+      "advisor": "Aishwarya Ganesan",
+      "university": "Univ. of Illinois at Urbana-Champaign",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2019,
+      "venues": [
+        "OSDI",
+        "FAST"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ]
+    },
+    {
+      "name": "Suyash Gupta",
+      "advisor": "Alexey Tumanov",
+      "university": "Georgia Institute of Technology",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2024,
+      "venues": [
+        "EuroSys",
+        "OSDI"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "Juncheng Yang",
+      "advisor": "Mosharaf Chowdhury",
+      "university": "University of Michigan",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2023,
+      "venues": [
+        "NSDI",
+        "SIGCOMM"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Jialin Li",
+      "advisor": "Thomas E. Anderson",
+      "university": "University of Washington",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2019,
+      "venues": [
+        "NSDI",
+        "OSDI"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ]
+    },
+    {
+      "name": "Haonan Lu",
+      "advisor": "Lorenzo Alvisi",
+      "university": "Cornell University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2022,
+      "venues": [
+        "OSDI",
+        "SOSP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "name": "Xiang Ni",
+      "advisor": "Manish Parashar",
+      "university": "University of Utah",
+      "areas": [
+        "hpc"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2020,
+      "venues": [
+        "SC",
+        "IPDPS"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "name": "Duo Zhang",
+      "advisor": "Haryadi S. Gunawi",
+      "university": "University of Chicago",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2023,
+      "venues": [
+        "FAST",
+        "USENIX ATC"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Wenhao Wang",
+      "advisor": "Steven Swanson",
+      "university": "Univ. of California - San Diego",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2022,
+      "venues": [
+        "ASPLOS",
+        "ISCA"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "name": "Tanvir Ahmed Khan",
+      "advisor": "Saurabh Bagchi",
+      "university": "Purdue University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2023,
+      "venues": [
+        "ASPLOS",
+        "ISCA"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Keren Zhou",
+      "advisor": "John M. Mellor-Crummey",
+      "university": "Rice University",
+      "areas": [
+        "hpc"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2023,
+      "venues": [
+        "SC",
+        "PPoPP"
+      ],
+      "confidence": "high",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Siddharth Samsi",
+      "advisor": "Wu-chun Feng",
+      "university": "Virginia Tech",
+      "areas": [
+        "hpc"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2019,
+      "venues": [
+        "SC",
+        "IPDPS"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019
+      ]
+    },
+    {
+      "name": "Jianshen Liu",
+      "advisor": "Carlos Maltzahn",
+      "university": "Univ. of California - Santa Cruz",
+      "areas": [
+        "os",
+        "hpc"
+      ],
+      "coauthor_count": 7,
+      "graduation_year_est": 2023,
+      "venues": [
+        "FAST",
+        "SC"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Zhihao Bai",
+      "advisor": "Zhihao Jia",
+      "university": "Carnegie Mellon University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 6,
+      "graduation_year_est": 2025,
+      "venues": [
+        "OSDI",
+        "SOSP"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    },
+    {
+      "name": "Frank Cangialosi",
+      "advisor": "Nickolai Zeldovich",
+      "university": "Massachusetts Inst. of Technology",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 6,
+      "graduation_year_est": 2023,
+      "venues": [
+        "NSDI",
+        "SIGCOMM"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Om Rameshwar Gatla",
+      "advisor": "Remzi H. Arpaci-Dusseau",
+      "university": "University of Wisconsin - Madison",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 6,
+      "graduation_year_est": 2023,
+      "venues": [
+        "FAST",
+        "OSDI"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Xin Lian",
+      "advisor": "Ada Gavrilovska",
+      "university": "Georgia Institute of Technology",
+      "areas": [
+        "os",
+        "hpc"
+      ],
+      "coauthor_count": 6,
+      "graduation_year_est": 2022,
+      "venues": [
+        "ASPLOS",
+        "USENIX ATC"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "name": "Ashraf Mahgoub",
+      "advisor": "Mosharaf Chowdhury",
+      "university": "University of Michigan",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 6,
+      "graduation_year_est": 2022,
+      "venues": [
+        "OSDI",
+        "NSDI"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "name": "Joshua Fried",
+      "advisor": "Thomas E. Anderson",
+      "university": "University of Washington",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 6,
+      "graduation_year_est": 2023,
+      "venues": [
+        "OSDI",
+        "NSDI"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Siddhartha Sen",
+      "advisor": "Rachit Agarwal",
+      "university": "Cornell University",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 6,
+      "graduation_year_est": 2023,
+      "venues": [
+        "NSDI",
+        "SIGCOMM"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "name": "Tao Zhang",
+      "advisor": "Ryan Stutsman",
+      "university": "University of Utah",
+      "areas": [
+        "os"
+      ],
+      "coauthor_count": 6,
+      "graduation_year_est": 2022,
+      "venues": [
+        "OSDI",
+        "FAST"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "csrankings_coauthors"
+      ],
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
     }
   ]
 }
