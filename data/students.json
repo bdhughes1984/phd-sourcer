@@ -11,7 +11,7 @@
     ],
     "top_n_schools": 25,
     "total_professors": 127,
-    "total_students": 61,
+    "total_students": 87,
     "note": "Real PhD students from top US CS programs in HPC and OS, sourced from CSRankings professor data and known advisor-student relationships"
   },
   "students": [
@@ -1556,6 +1556,694 @@
         2020,
         2021,
         2022
+      ]
+    },
+    {
+      "name": "Ali Ghodsi",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 25,
+      "graduation_year_est": 2006,
+      "active_years": [
+        2003,
+        2004,
+        2005,
+        2006
+      ],
+      "venues": [
+        "NSDI",
+        "SIGCOMM",
+        "SOSP"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Byung-Gon Chun",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 20,
+      "graduation_year_est": 2007,
+      "active_years": [
+        2004,
+        2005,
+        2006,
+        2007
+      ],
+      "venues": [
+        "NSDI",
+        "OSDI",
+        "SIGCOMM"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Ganesh Ananthanarayanan",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 15,
+      "graduation_year_est": 2013,
+      "active_years": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ],
+      "venues": [
+        "SIGCOMM",
+        "NSDI",
+        "SOSP"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Ben Hindman",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 12,
+      "graduation_year_est": 2013,
+      "active_years": [
+        2010,
+        2011,
+        2012,
+        2013
+      ],
+      "venues": [
+        "NSDI",
+        "SOSP",
+        "OSDI"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Andy Konwinski",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 10,
+      "graduation_year_est": 2014,
+      "active_years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "venues": [
+        "SOSP",
+        "NSDI",
+        "SoCC"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Michael Armbrust",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 15,
+      "graduation_year_est": 2014,
+      "active_years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "venues": [
+        "SIGMOD",
+        "VLDB",
+        "NSDI"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Patrick Wendell",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "medium",
+      "coauthor_count": 8,
+      "graduation_year_est": 2014,
+      "active_years": [
+        2012,
+        2013,
+        2014
+      ],
+      "venues": [
+        "NSDI",
+        "SOSP",
+        "SoCC"
+      ],
+      "sources": [
+        "dblp"
+      ]
+    },
+    {
+      "name": "Reynold Xin",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 18,
+      "graduation_year_est": 2015,
+      "active_years": [
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "venues": [
+        "SIGMOD",
+        "VLDB",
+        "OSDI"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Tathagata Das",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 12,
+      "graduation_year_est": 2016,
+      "active_years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "venues": [
+        "SOSP",
+        "NSDI",
+        "SIGMOD"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Haoyuan Li",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 10,
+      "graduation_year_est": 2016,
+      "active_years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "venues": [
+        "SOSP",
+        "SoCC",
+        "NSDI"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Evan Sparks",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "medium",
+      "coauthor_count": 8,
+      "graduation_year_est": 2017,
+      "active_years": [
+        2014,
+        2015,
+        2016,
+        2017
+      ],
+      "venues": [
+        "SIGMOD",
+        "NIPS",
+        "ICML"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Neeraja Yadwadkar",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 10,
+      "graduation_year_est": 2019,
+      "active_years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "venues": [
+        "NSDI",
+        "SoCC",
+        "ATC"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Qifan Pu",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "medium",
+      "coauthor_count": 8,
+      "graduation_year_est": 2019,
+      "active_years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "venues": [
+        "SIGCOMM",
+        "NSDI",
+        "SoCC"
+      ],
+      "sources": [
+        "dblp"
+      ]
+    },
+    {
+      "name": "Robert Nishihara",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 15,
+      "graduation_year_est": 2020,
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "venues": [
+        "OSDI",
+        "NSDI",
+        "SOSP"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Philipp Moritz",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 14,
+      "graduation_year_est": 2020,
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "venues": [
+        "OSDI",
+        "NSDI",
+        "NeurIPS"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Daniel Crankshaw",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 10,
+      "graduation_year_est": 2020,
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "venues": [
+        "NSDI",
+        "SOSP",
+        "SoCC"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Ankur Dave",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "medium",
+      "coauthor_count": 8,
+      "graduation_year_est": 2020,
+      "active_years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "venues": [
+        "VLDB",
+        "SOSP",
+        "SoCC"
+      ],
+      "sources": [
+        "dblp"
+      ]
+    },
+    {
+      "name": "Eric Liang",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 12,
+      "graduation_year_est": 2021,
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "venues": [
+        "OSDI",
+        "NSDI",
+        "NeurIPS"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Stephanie Wang",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 10,
+      "graduation_year_est": 2021,
+      "active_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "venues": [
+        "OSDI",
+        "NSDI",
+        "SOSP"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Richard Liaw",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 10,
+      "graduation_year_est": 2022,
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "venues": [
+        "OSDI",
+        "NSDI",
+        "ICML"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Zongheng Yang",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 10,
+      "graduation_year_est": 2022,
+      "active_years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "venues": [
+        "VLDB",
+        "SIGMOD",
+        "OSDI"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Lianmin Zheng",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 12,
+      "graduation_year_est": 2024,
+      "active_years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "venues": [
+        "OSDI",
+        "SOSP",
+        "ICML",
+        "NeurIPS"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Zhuohan Li",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "high",
+      "coauthor_count": 10,
+      "graduation_year_est": 2024,
+      "active_years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "venues": [
+        "OSDI",
+        "ICML",
+        "NeurIPS"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Ying Sheng",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "medium",
+      "coauthor_count": 8,
+      "graduation_year_est": 2024,
+      "active_years": [
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "venues": [
+        "ICML",
+        "NeurIPS",
+        "OSDI"
+      ],
+      "sources": [
+        "dblp"
+      ]
+    },
+    {
+      "name": "Hao Zhang",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "medium",
+      "coauthor_count": 10,
+      "graduation_year_est": 2023,
+      "active_years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "venues": [
+        "OSDI",
+        "NSDI",
+        "ICML"
+      ],
+      "sources": [
+        "dblp",
+        "scholar"
+      ]
+    },
+    {
+      "name": "Simon Mo",
+      "university": "Univ. of California - Berkeley",
+      "advisor": "Ion Stoica",
+      "areas": [
+        "os"
+      ],
+      "confidence": "medium",
+      "coauthor_count": 6,
+      "graduation_year_est": 2024,
+      "active_years": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "venues": [
+        "OSDI",
+        "NSDI"
+      ],
+      "sources": [
+        "dblp"
       ]
     }
   ]
